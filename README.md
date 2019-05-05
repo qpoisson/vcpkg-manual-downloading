@@ -1,6 +1,10 @@
 # vcpkg-manual-downloading
 
-Vcpkg install often fails due to very slow downloading. In this case, we can try to download the package file manually and then continue to install. Here, we use assimp as an example. In vcpkg/ports/assimp/portfile.cmake, we can find the following section
+Vcpkg install often fails due to very slow downloading of the source package. We can download the source package file manually and then continue the installation. 
+
+## Case 1: vcpkg_from_github 
+
+For some packages, vcpkg downloding is instructed via vcpkg_from_github.  For example, in vcpkg/ports/assimp/portfile.cmake, we can find the following information
 
 ```
 vcpkg_from_github(
@@ -16,7 +20,6 @@ vcpkg_from_github(
 ```
 
 
-
 * Determine the URL of the source package
 
 Go to the release page of assimp v4.1.0: https://github.com/assimp/assimp/releases/tag/v4.1.0 , we can find the url should be https://github.com/assimp/assimp/archive/v4.1.0.tar.gz 
@@ -25,5 +28,5 @@ Go to the release page of assimp v4.1.0: https://github.com/assimp/assimp/releas
 
 * Run vcpkg install , you will get an error message complaining that the actual hash is not the same as the expected hash in portfile.cmake . You can simply edit portfile.cmake to replace the expected hash with the actual one.
 
-* RUn vcpkg install again.
+* Run vcpkg install again.
  
