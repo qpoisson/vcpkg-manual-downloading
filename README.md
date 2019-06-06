@@ -24,7 +24,7 @@ vcpkg_from_github(
 
 Go to the release page of assimp v4.1.0: https://github.com/assimp/assimp/releases/tag/v4.1.0 , we can find the url should be https://github.com/assimp/assimp/archive/v4.1.0.tar.gz 
 
-* Download the source package manually, and save it to vcpkg/download/assimp-assimp-v4.1.0.tar.gz
+* Download the source package manually, and save it to vcpkg/download/assimp-assimp-v4.1.0.tar.gz   . The filename of the saved file: assimp-assimp-v4.1.0.tar.gz is constructed by two words in REPO sectionn and the original filename.
 
 * Run vcpkg install , you will get an error message complaining that the actual hash is not the same as the expected hash in portfile.cmake . You can simply edit portfile.cmake to replace the expected hash with the actual one.
 
